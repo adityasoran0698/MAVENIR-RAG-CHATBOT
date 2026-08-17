@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const BASE_URL = "https://mavenir-rag-chatbot.onrender.com";
 
 export async function sendChat(query, threadId) {
   const res = await fetch(`${BASE_URL}/chat`, {
