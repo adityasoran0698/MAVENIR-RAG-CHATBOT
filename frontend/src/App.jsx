@@ -274,7 +274,7 @@ export default function App() {
 
         {connError && (
           <div className="conn-banner">
-            Can't reach the backend at localhost:8000 — make sure it's running.
+            Can't reach the backend — make sure it's running.
           </div>
         )}
 
