@@ -122,13 +122,15 @@ def chat_stream(req: ChatRequest):
             for event in stream_turn(req.thread_id, req.query):
                 yield f"data: {json.dumps(event)}\n\n"
 
-            yield f"data: {json.dumps({'type': 'done'})}\n\n"
+            done_event = {"type": "done"}
+            yield f"data: {json.dumps(done_event)}\n\n"
 
         except Exception as e:
-            yield f"data: {json.dumps({
-                'type': 'error',
-                'message': str(e)
-            })}\n\n"
+            error_event = {
+                "type": "error",
+                "message": str(e),
+            }
+            yield f"data: {json.dumps(error_event)}\n\n"
 
     return StreamingResponse(
         event_generator(),
@@ -162,4 +164,5 @@ def new_thread():
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
