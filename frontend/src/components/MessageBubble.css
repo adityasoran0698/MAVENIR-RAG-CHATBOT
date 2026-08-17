@@ -1,0 +1,151 @@
+.msg-row {
+  display: flex;
+  gap: 10px;
+  padding: 2px 0;
+  animation: msg-in 0.28s ease;
+}
+
+@keyframes msg-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 22px;
+}
+
+.typing-indicator span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+.msg-row-user {
+  justify-content: flex-end;
+}
+
+.msg-row-assistant {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.msg-avatar {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-tint);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.msg-body {
+  max-width: 640px;
+  min-width: 0;
+}
+
+.msg-bubble {
+  border-radius: var(--radius-md);
+  padding: 11px 14px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.msg-bubble-user {
+  background: var(--accent);
+  color: #06201f;
+  border-bottom-right-radius: 4px;
+  max-width: 520px;
+}
+
+.msg-bubble-assistant {
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-hairline);
+  border-bottom-left-radius: 4px;
+}
+
+.msg-bubble-error {
+  border-color: rgba(226, 75, 74, 0.4);
+  background: rgba(226, 75, 74, 0.08);
+}
+
+.msg-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.msg-meta-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.msg-text {
+  margin: 0;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+}
+
+.msg-flagged {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: var(--warn-tint);
+  border: 1px solid rgba(232, 163, 61, 0.28);
+  border-radius: var(--radius-sm);
+}
+
+.msg-flagged-title {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--warn);
+  margin-bottom: 4px;
+}
+
+.msg-flagged ul {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}

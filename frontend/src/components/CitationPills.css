@@ -1,0 +1,21 @@
+.citation-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.citation-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.01em;
+  color: var(--citation);
+  background: var(--citation-tint);
+  border: 1px solid rgba(240, 168, 104, 0.28);
+  border-radius: 5px;
+  padding: 3px 8px;
+  line-height: 1.4;
+}

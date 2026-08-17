@@ -1,0 +1,28 @@
+.signal {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 15px;
+  cursor: default;
+}
+
+.signal-bar {
+  width: 3px;
+  background: var(--border-strong);
+  border-radius: 1px;
+  transition: background 0.2s ease;
+}
+
+.signal-bar-active {
+  background: var(--accent-dim);
+}
+
+.signal-bar-pulse.signal-bar-active {
+  background: var(--accent);
+  animation: signal-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes signal-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
